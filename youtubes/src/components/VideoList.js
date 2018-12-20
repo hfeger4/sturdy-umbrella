@@ -1,26 +1,22 @@
 import React from "react";
 import './images.css';
+import VideoItem from './VideoItem';
 
 class VideoList extends React.Component {
   constructor(props) {
     super(props);
   }
   renderThumbnails() {
-    return this.props.videos.map(video => {
+    const renderedList = this.props.videos.map(video => {
       return (
-        <div>
-          <img
-          alt={video.id}
-          src={video.snippet.thumbnails.default.url}
-          />
-        </div>
+        <VideoItem video={video}/>
       );
     });
+    return renderedList;
   }
   render() {
     return (
-      <div>
-        My List: {this.props.videos.length}
+      <div className="ui relaxed divided list">
         {this.renderThumbnails()}
       </div>
     );
