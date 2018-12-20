@@ -12,13 +12,15 @@ class SearchBar extends React.Component {
     this.props.myOnSubmit(this.state.term);
   };
   render() {
-    console.log(this.state);
     return (
       <div className="search-bar ui segment">
         <form className="ui form" onSubmit={this.handleFormSubmit}>
           <div>
             <label>Video Search</label>
-            <input onChange={e => this.setState({ term: e.target.value })} />
+            <input
+              onChange={e => this.setState({ term: e.target.value })}
+              type="text"
+             />
           </div>
         </form>
       </div>
