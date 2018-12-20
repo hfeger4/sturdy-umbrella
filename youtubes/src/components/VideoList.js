@@ -9,7 +9,10 @@ class VideoList extends React.Component {
   renderThumbnails() {
     const renderedList = this.props.videos.map(video => {
       return (
-        <VideoItem video={video}/>
+        <VideoItem
+        key={`${video.id.videoId}`}
+        onVideoSelect={this.props.onVideoSelect}
+        video={video}/>
       );
     });
     return renderedList;
