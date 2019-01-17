@@ -1,5 +1,7 @@
 import React from 'react';
 import { selectSong } from '../actions';
+import SongList from './SongList';
+import { connect } from 'react-redux'
 
 class App extends React.Component{
   constructor(props){
@@ -9,6 +11,7 @@ class App extends React.Component{
     return(
       <div>
       Hello there
+      <SongList />
       </div>
     )
   }
